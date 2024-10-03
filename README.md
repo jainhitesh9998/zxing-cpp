@@ -112,3 +112,5 @@ cmake --build zxing-cpp.release -j8 --config Release
 [conan](https://github.com/conan-io/conan-center-index/tree/master/recipes/zxing-cpp),
 [mingw](https://github.com/msys2/MINGW-packages/tree/master/mingw-w64-zxing-cpp) and a bunch of
 [linux distributions](https://repology.org/project/zxing-cpp/versions).]
+
+Updated Github Actions
