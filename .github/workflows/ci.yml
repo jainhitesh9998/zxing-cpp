@@ -279,6 +279,30 @@ jobs:
         path: |
             build/zxing*
             build/demo*
+            
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@jainhitesh9998'
+
+    - name: Prepare package.json
+      run: |
+        echo '{
+          "name": "@jainhitesh9998/zxing-cpp-wasm",
+          "version": "1.0.0",
+          "description": "ZXing cpp-wasm package",
+          "files": ["zxing*.js", "zxing*.wasm"],
+          "main": "zxing.js"
+        }' > build/package.json
+
+    - name: Publish to GitHub Packages
+      run: |
+        cd build
+        npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   build-winrt:
     runs-on: windows-latest
