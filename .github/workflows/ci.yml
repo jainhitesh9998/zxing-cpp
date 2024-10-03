@@ -291,7 +291,7 @@ jobs:
       run: |
         echo '{
           "name": "@jainhitesh9998/zxing-cpp-wasm",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "description": "ZXing cpp-wasm package",
           "files": ["zxing*.js", "zxing*.wasm"],
           "main": "zxing.js"
